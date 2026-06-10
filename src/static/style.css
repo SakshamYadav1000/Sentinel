@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:black;
+    color:#ffffff;
+    font-family:'Rajdhani',sans-serif;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:black;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#f50a1c;
+    border-radius:20px;
+}
+
+/* Navigation */
+
+.navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    background:rgba(0,0,0,0.3);
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:'Orbitron',sans-serif;
+    font-size:28px;
+    color:#f50a1c;
+    text-shadow:0 0 15px #f50a1c;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#f50a1c;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 10%;
+}
+
+.hero-content h1{
+    font-size:70px;
+    font-family:'Orbitron',sans-serif;
+    color:#f50a1c;
+    text-shadow:
+    0 0 10px #f50a1c,
+    0 0 30px #f50a1c;
+}
+
+.hero-content p{
+    margin-top:20px;
+    font-size:22px;
+    color:#cbd5e1;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    background:#f50a1c;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    box-shadow:0 0 25px #f50a1c;
+    transform:translateY(-3px);
+}
+
+/* Sections */
+
+.section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    color:#f50a1c;
+    margin-bottom:50px;
+    font-family:'Orbitron';
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(0,229,255,.3);
+    border-radius:20px;
+    padding:30px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(0,229,255,.5);
+}
+
+.card h3{
+    color:#f50a1c;
+    margin-bottom:15px;
+}
+
+/* Upload */
+
+.upload-container{
+    max-width:700px;
+    margin:auto;
+}
+
+.upload-box{
+    background:rgba(255,255,255,.05);
+    border:2px dashed #f50a1c;
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+}
+
+input[type=file]{
+    width:100%;
+    padding:15px;
+    color:white;
+}
+
+/* Stats */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.stat-card{
+    text-align:center;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(0,229,255,.3);
+}
+
+.stat-card h2{
+    color:#f50a1c;
+    font-size:45px;
+}
+
+/* Table */
+
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+}
+
+table th{
+    background:#f50a1c;
+    color:black;
+    padding:15px;
+}
+
+table td{
+    padding:12px;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+table tr:nth-child(even){
+    background:rgba(255,255,255,.03);
+}
+
+/* Downloads */
+
+.downloads{
+    text-align:center;
+    margin-top:40px;
+}
+
+.download-btn{
+    display:inline-block;
+    margin:10px;
+    padding:15px 30px;
+    background:#f50a1c;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.download-btn:hover{
+    box-shadow:0 0 25px rgba(0,229,255,.5);
+}
+
+/* Login */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+    width:420px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(0,229,255,.3);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:20px;
+}
+
+.login-card h1{
+    text-align:center;
+    color:#f50a1c;
+    margin-bottom:30px;
+    font-family:'Orbitron';
+}
+
+.login-card input{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    background:#0f172a;
+    border:1px solid rgba(0,229,255,.3);
+    color:white;
+    border-radius:10px;
+}
+
+.login-card button{
+    width:100%;
+    padding:15px;
+    background:#f50a1c;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.login-card {
+    box-shadow:
+        0 0 20px rgba(0,229,255,.2),
+        0 0 40px rgba(0,229,255,.1);
+}
+
+.login-card:hover {
+    box-shadow:
+        0 0 30px rgba(0,229,255,.4),
+        0 0 60px rgba(0,229,255,.2);
+}
+
+/* Cyber Upload Section */
+
+.upload-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,229,255,0.15),
+        transparent
+    );
+    transform: translateX(-100%);
+    animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Custom File Upload */
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    padding: 18px 35px;
+    border: 2px solid #f50a1c;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #f50a1c;
+    font-weight: bold;
+    font-size: 18px;
+    transition: .3s;
+    background: rgba(0,229,255,0.05);
+}
+
+.custom-file-upload:hover {
+    background: rgba(0,229,255,0.15);
+    box-shadow: 0 0 25px rgba(0,229,255,0.5);
+}
+
+#file-name {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* Analyze Button */
+
+.analyze-btn {
+    background: linear-gradient(
+        45deg,
+        #f50a1c,
+        #00bcd4
+    );
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 20px #f50a1c,
+        0 0 40px rgba(0,229,255,0.5);
+}

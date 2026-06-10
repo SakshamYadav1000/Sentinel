@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelAI Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-page">
+
+    <div class="login-card">
+
+        <h1>SENTINELAI</h1>
+
+        <p style="text-align:center; margin-bottom:25px; color:#cbd5e1;">
+            AI-Powered Fraud Detection System
+        </p>
+
+        {% if error %}
+        <p style="color:red; text-align:center; margin-bottom:15px;">
+            {{ error }}
+        </p>
+        {% endif %}
+
+        <form action="/login" method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">
+                ACCESS SYSTEM
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

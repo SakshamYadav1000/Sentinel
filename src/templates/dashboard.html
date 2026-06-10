@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        SENTINEL
+    </div>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#upload">Analyze</a>
+        <a href="#results">Results</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>SENTINEL</h1>
+
+        <p>
+            Machine Learning Credit Card Fraud Detection System
+        </p>
+
+        <p style="margin-top:15px;">
+            Detect suspicious transactions using Machine Learning,
+            Random Forests, and intelligent fraud analytics.
+        </p>
+
+        <a href="#upload" class="btn">
+            Start Analysis
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+    <h2 class="section-title">
+        About Sentinel
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Mission</h3>
+
+            <p>
+                Sentinel protects financial systems by identifying
+                fraudulent transactions using advanced machine learning.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Performance</h3>
+
+            <p>
+                ROC-AUC: 0.9984<br>
+                PR-AUC: 0.9220
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Technology</h3>
+
+            <p>
+                Python, Flask, Scikit-Learn,
+                Pandas, NumPy, SMOTE,
+                Random Forest & Optuna.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features" class="section">
+
+    <h2 class="section-title">
+        Features
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Fraud Detection</h3>
+
+            <p>
+                Detect fraudulent transactions
+                with high accuracy.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>CSV Analysis</h3>
+
+            <p>
+                Upload transaction datasets
+                instantly.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>AI Predictions</h3>
+
+            <p>
+                Machine learning powered
+                fraud classification.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Export Reports</h3>
+
+            <p>
+                Download complete analysis
+                and fraud-only reports.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- UPLOAD -->
+
+<section id="upload" class="section">
+
+    <h2 class="section-title">
+        Upload Dataset
+    </h2>
+
+    <div class="upload-container">
+
+        <div class="upload-box">
+
+            <form
+                action="/upload_csv"
+                method="POST"
+                enctype="multipart/form-data">
+
+                <div class="file-upload">
+
+                    <label for="file-upload"
+                        class="custom-file-upload">
+                        SELECT DATASET
+                    </label>
+
+                    <input
+                        id="file-upload"
+                        type="file"
+                        name="file"
+                        accept=".csv"
+                        required>
+
+                    <span id="file-name">
+                        No file selected
+                    </span>
+
+                    <button
+                        type="submit"
+                        class="analyze-btn">
+
+                         ANALYZE DATASET
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RESULTS -->
+
+{% if result %}
+
+<section id="results" class="section">
+
+    <h2 class="section-title">
+        Analysis Results
+    </h2>
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <h2>
+                {{ result.total }}
+            </h2>
+
+            <p>Total Transactions</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+                {{ result.frauds }}
+            </h2>
+
+            <p>Frauds Detected</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+                {{ ((result.frauds / result.total) * 100) | round(2) }}%
+            </h2>
+
+            <p>Fraud Rate</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+<!-- TABLE -->
+
+{% if result and result.frauds > 0 %}
+
+<section class="section">
+
+    <h2 class="section-title">
+        Top 10 Fraud Transactions
+    </h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+
+                {% for col in result.columns %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+
+            </tr>
+
+            {% for row in result.top10 %}
+
+            <tr>
+
+                {% for item in row %}
+                    <td>{{ item }}</td>
+                {% endfor %}
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+<!-- DOWNLOADS -->
+
+{% if result %}
+
+<section class="section">
+
+    <h2 class="section-title">
+        Export Reports
+    </h2>
+
+    <div class="downloads">
+
+        <a href="/download_result"
+           class="download-btn">
+
+            Download Full Results
+
+        </a>
+
+        <a href="/download_frauds"
+           class="download-btn">
+
+            Download Frauds Only
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+<!-- FOOTER -->
+
+<footer
+style="
+text-align:center;
+padding:40px;
+color:#94a3b8;
+">
+
+    Sentinel © 2026
+    S.Y
+
+</footer>
+
+{% if result %}
+<script>
+window.onload = function() {
+
+    const resultsSection =
+        document.getElementById("results");
+
+    if(resultsSection){
+        resultsSection.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+};
+</script>
+{% endif %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const fileInput = document.getElementById("file-upload");
+    const fileName = document.getElementById("file-name");
+
+    if(fileInput && fileName){
+
+        fileInput.addEventListener("change", function(){
+
+            fileName.textContent =
+                this.files.length > 0
+                ? "✓ " + this.files[0].name
+                : "📡 Awaiting Dataset...";
+
+        });
+
+    }
+
+});
+</script>
+
+</body>
+</html>
