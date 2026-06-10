@@ -190,23 +190,23 @@ These files are gitignored and not committed to the repository.
 
 ##Screenshots
 
-###Login Page
+### Login Page
 ![Login Page](Screenshots/01_Login_page.png)
 
-###Dashboard
+### Dashboard
 ![Dashboard](Screenshots/02_dashboard.png)
 
-###About
+### About
 ![About](Screenshots/03_About.png)
 
-###Upload
+### Upload
 ![Upload](Screenshots/04_Upload_section.png)
 
-###Results
+### Results
 ![Summary](Screenshots/05_Result_summary.png)
 ![Table](Screenshots/06_fraud_detection_table.png)
 
-###Download
+### Download
 ![Download](Screenshots/07_Download_options.png)
 
 ---
