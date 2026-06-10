@@ -4,7 +4,7 @@ Sentinel is an end-to-end machine learning project for detecting fraudulent cred
 
 ---
 
-Features
+##Features
 
 - Machine-learning-based fraud detection
 - Handles highly imbalanced datasets using SMOTE / undersampling
@@ -16,7 +16,7 @@ Features
 
 ---
 
-Model Performance
+##Model Performance
 
 Latest evaluation (Random Forest + tuning):
 
@@ -28,12 +28,14 @@ Fraud Precision| 0.97
 
 Confusion matrix (threshold 0.5):
 
+```text
 [[284304     11]
  [    89    403]]
+```
 
 ---
 
-Tech Stack
+##Tech Stack
 
 - Python
 - Flask
@@ -80,7 +82,7 @@ SentinelAI/
 ```
 ---
 
-Setup
+##Setup
 
 1. ### Clone the Repository
 
@@ -93,8 +95,10 @@ cd Sentinel
 
 Windows (PowerShell):
 
+```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
+```
 
 macOS/Linux:
 
@@ -103,15 +107,19 @@ source venv/bin/activate
 
 3. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 ---
 
-Running the Web App
+##Running the Web App
 
 From the project root:
 
+```bash
 python src/app.py
+```
 
 Open:
 
@@ -124,7 +132,7 @@ Password: password123
 
 ---
 
-Training the Model
+##Training the Model
 
 Place the Kaggle "creditcard.csv" dataset in the "data/" directory, then run:
 
@@ -137,7 +145,7 @@ This will save:
 
 ---
 
-Hyperparameter Tuning
+##Hyperparameter Tuning
 
 Fast tuning (recommended first):
 
@@ -149,7 +157,7 @@ python src/tune_long.py
 
 ---
 
-CSV Input Format
+##CSV Input Format
 
 The model expects exactly 30 feature columns corresponding to the training data (all feature columns except the target "Class").
 
@@ -161,7 +169,7 @@ Do not include the "Class" column when uploading CSVs for prediction.
 
 ---
 
-Output Files
+##Output Files
 
 After analysis, Sentinel generates:
 
@@ -172,7 +180,7 @@ These files are gitignored and not committed to the repository.
 
 ---
 
-Notes
+##Notes
 
 - The repository intentionally excludes the dataset and trained model artifacts.
 - Train the model locally before running the web app in a fresh clone.
@@ -180,32 +188,32 @@ Notes
 
 ---
 
-Screenshots
+##Screenshots
 
-#Login Page
+###Login Page
 ![Login Page](Screenshots/01_Login_page.png)
 
-#Dashboard
+###Dashboard
 ![Dashboard](Screenshots/02_dashboard.png)
 
-#About
+###About
 ![About](Screenshots/03_About.png)
 
-#Upload
+###Upload
 ![Upload](Screenshots/04_Upload_section.png)
 
-#Results
+###Results
 ![Summary](Screenshots/05_Result_summary.png)
 ![Table](Screenshots/06_fraud_detection_table.png)
 
-#Download
+###Download
 ![Download](Screenshots/07_Download_options.png)
 
 ---
 
-License
+##License
 
-Add a license (MIT, Apache-2.0, etc.) if you plan to make the project public.
+This project is intended for educational and portfolio purposes.
 
 ---
 
