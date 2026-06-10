@@ -50,6 +50,7 @@ Tech Stack
 
 Project Structure
 
+'''text
 Sentinel/
 │
 ├── data/                    # Dataset placeholder (.gitkeep)
@@ -80,13 +81,14 @@ Sentinel/
 ├── requirements.txt
 └── .gitignore
 
+'''
 ---
 
 Setup
 
 1. Clone the repository
 
-git clone <your-repo-url>
+git clone https;//github.com/SakshamYadav1000/Sentinel.git
 cd Sentinel
 
 2. Create a virtual environment
@@ -197,6 +199,8 @@ Screenshots
 #Results
 ![Summary](Screenshots/05_Result_summary.png)
 ![Table](Screenshots/06_fraud_detection_table.png)
+
+#Download
 ![Download](Screenshots/07_Download_options.png)
 
 ---
