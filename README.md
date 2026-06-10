@@ -48,48 +48,46 @@ Tech Stack
 
 ---
 
-Project Structure
+## Project Structure
 
-'''text
-Sentinel/
+```text
+SentinelAI/
 │
-├── data/                    # Dataset placeholder (.gitkeep)
-├── models/                  # Trained model placeholder (.gitkeep)
-├── reports/                 # Evaluation outputs placeholder (.gitkeep)
-├── results/                 # Generated CSV outputs (gitignored)
-├── Screenshots/             # Screenshots of the project
-|
+├── data/
+│   └── .gitkeep
+├── models/
+│   └── .gitkeep
+├── reports/
+│   └── .gitkeep
+├── results/
+├── screenshots/
 ├── src/
 │   ├── static/
 │   │   ├── style.css
 │   │   └── script.js
-│   │
 │   ├── templates/
 │   │   ├── login.html
 │   │   └── dashboard.html
-│   │
-│   ├── app.py               # Flask application
-│   ├── train.py             # Training pipeline
-│   ├── tune.py              # Fast hyperparameter tuning
-│   ├── tune_long.py         # Extended tuning (optional)
-│   └── evaluate.py          # Evaluation script
-│
+│   ├── app.py
+│   ├── train.py
+│   ├── tune.py
+│   └── evaluate.py
 ├── notebook/
 │   └── 01_quick_eda.ipynb
-│
 ├── README.md
 ├── requirements.txt
 └── .gitignore
-
-'''
+```
 ---
 
 Setup
 
-1. Clone the repository
+1. ### Clone the Repository
 
-git clone https;//github.com/SakshamYadav1000/Sentinel.git
+```bash
+git clone https://github.com/SakshamYadav1000/Sentinel.git
 cd Sentinel
+```
 
 2. Create a virtual environment
 
