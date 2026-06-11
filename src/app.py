@@ -13,11 +13,20 @@ results=os.path.join(project_root,"results")
 os.makedirs(results,exist_ok=True)
 
 # Flask setup
-app = Flask(__name__, template_folder=template_dir)
-app.secret_key = "sentinel-dev-key"
+static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
+
+app = Flask(
+    __name__,
+    template_folder=template_dir,
+    static_folder=static_dir
+)
+
+app.secret_key = os.environ.get("SECRET_KEY", "sentinel-dev-key")
 
 # Load model
-MODEL_PATH = os.path.join("models", "fraud_detector.pkl")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "fraud_detector.pkl")
+
 model = joblib.load(MODEL_PATH)
 
 
