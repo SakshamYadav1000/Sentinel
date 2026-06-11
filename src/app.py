@@ -44,6 +44,11 @@ def logout():
     session.pop("username", None)
     return redirect(url_for("home"))
 
+@app.route("/guest")
+def guest():
+    session["username"] = "Guest"
+    return redirect(url_for("dashboard"))
+
 #Dashboard:
 @app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():

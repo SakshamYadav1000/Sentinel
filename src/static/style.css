@@ -296,6 +296,60 @@ table tr:nth-child(even){
         0 0 60px rgba(0,229,255,.2);
 }
 
+/* Guest Access Button */
+.guest-btn {
+    width: 100%;
+    padding: 12px 25px;
+    background: #f50a1c;
+    border:none;
+    border-radius:10px;
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+
+.guest-btn:hover {
+    background: #00ffff;
+    color: black;
+
+    box-shadow:
+        0 0 10px #f50a1c,
+        0 0 20px #f50a1c,
+        0 0 40px #f50a1c;
+
+    transform: translateY(-2px);
+}
+
+/* demo card */
+.demo-card {
+    margin-bottom: 25px;
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: black;
+
+    border: 1px solid rgba(0, 255, 255, 0.3);
+
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+}
+
+.demo-card h3 {
+    color: #f50a1c;
+    margin-bottom: 10px;
+}
+
+.demo-card p {
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
 /* Cyber Upload Section */
 
 .upload-box {
