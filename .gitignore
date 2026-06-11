@@ -31,12 +31,6 @@ data/*
 !data/.gitkeep
 
 # =========================
-# Trained Models
-# =========================
-models/*
-!models/.gitkeep
-
-# =========================
 # Reports
 # =========================
 reports/*
