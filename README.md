@@ -3,6 +3,9 @@ Sentinel — AI-Powered Credit Card Fraud Detection System
 Sentinel is an end-to-end machine learning project for detecting fraudulent credit card transactions. It combines a trained fraud-detection model with a Flask-based web application that allows users to upload transaction datasets (CSV files), analyze them, and download both complete results and fraud-only reports.
 
 ---
+##Live Demo:
+[Try Sentinel Live](https://sentinel-k1cy.onrender.com)
+---
 
 ##Features
 
